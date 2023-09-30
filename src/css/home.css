@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body,html{
+    height: 100%;
+    color: gray;
+    background: rgba(0, 0, 0, 0.605);
+    font-family: IBM Plex Mono,Menlo,DejaVu Sans Mono,Lucida Console,monospace;
+    -webkit-font-smoothing: antialiased;
+    scrollbar-gutter: stable both-edges;
+}
+.app{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-barcontent{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: rgb(24,29,35);
+    flex-grow: 1;
+    max-width: 200px;
+}
+.content{
+    position: relative;
+    display: flex;
+    flex-grow: 2;
+    width: auto;
+}
+.header,.left-bartoplogo{
+    display: flex;
+    justify-content:  flex-end;
+    position: sticky;
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(to right,rgb(29, 35, 43) 50%,transparent);
+}
+.header>.header-right{
+    width: 50vw;
+    padding: 12px 18px 0 100px;
+    margin-right: 0;
+}
+.left-bartoplogo{
+    background-repeat: no-repeat;
+    background: url(../images/logo-new.svg);
+    width: 139px;
+    height: 17px;
+    margin: 25px 25.6px 18px 25.6px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+
+}
+.left-bartop{
+    background: rgb(29, 35, 43);
+}
+.left-bartoplogo:hover{
+    cursor: pointer;
+}
+.pagebutton{
+    padding: 10px 0;
+    margin: 5px 0;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #95a7bc96;
+    font-size: 15px;
+    font-family: ClashGrotesk;
+    font-weight: 500;
+    transition:  .25s ease;
+    border-radius: 30px;
+    padding-left: 25px;
+}
+.pagebutton:hover{
+    color: #ffffff;
+    padding-left: 15px;
+    background: linear-gradient(95.67deg,rgba(54, 68, 82, 0.422) 0%,rgba(217,222,227,0) 92.54%);
+}
+.button{
+    margin: 0 0 0 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 0.9rem;
+    border: 0;
+    border-radius: 40px;
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.1);
+    background-color: #323f4a;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+    line-height: 1.2;
+    transition-property: transform, background-color;
+    font-family: ClashGrotesk;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    text-align: left;
+}
