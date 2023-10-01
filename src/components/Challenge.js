@@ -1,13 +1,23 @@
 import React from 'react';
-import './Challenge.css';
 
-function Challenge({ title, image, description }) {
+
+function Challenge() {
+
   return (
-    <div className="challenge">
-      <img src={image} alt={title} />
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </div>
+    <div className="single-targets">
+    <div className="pill"></div>
+        <div className="target-question">
+                <img src="https://cssbattle.dev/images/welcome.jpg" ></img>
+                <div className="target-footer">
+                <div className="score">
+                    <p>Your hi-score</p>
+                    <h3>Not played</h3>
+                </div>
+                <button class='button' >?</button>
+                </div>
+            
+    </div>            
+</div>
   );
 }
 
