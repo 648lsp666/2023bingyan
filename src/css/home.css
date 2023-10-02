@@ -6,7 +6,7 @@
 body,html{
     height: 100%;
     color: gray;
-    background: rgb(0, 0, 0);
+    background: #07080b;
     font-family: IBM Plex Mono,Menlo,DejaVu Sans Mono,Lucida Console,monospace;
     -webkit-font-smoothing: antialiased;
 }
@@ -19,7 +19,7 @@ body,html{
 .left-barcontent{
     position: sticky;
     left:5px;
-    top:0;
+    top: 0px;
     z-index: 10;
     display: flex;
     flex-direction: column;
@@ -28,6 +28,37 @@ body,html{
     flex-grow: 1;
     max-width: 200px;
 }
+.left-barcontent2{
+    position: sticky;
+    left:5px;
+    top:0px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: rgb(24,29,35);
+    flex-grow: 1;
+    max-width: 75px;
+}
+.leftbarbuttons{
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+.leftbarbuttons svg{
+    margin-right: 8px;
+} 
+.leftbarbuttons p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100%;
+    background: #101217;
+    font-size: 18px;
+    padding-left: 25px;
+    padding-top: 5px;
+    color: #ffffffcc;
+    font-weight: 500;
+}
+
 .content{
     position: relative;
     display: flex;
@@ -56,6 +87,10 @@ body,html{
 }
 .header>.header-left{
     width: auto;
+}
+.header #day-night{
+    border-radius: 100%;
+    padding: 7px;
 }
 .left-bartoplogo{
     background-repeat: no-repeat;
@@ -146,7 +181,7 @@ body,html{
     border-radius: 20px;
 }
 .daily-targets{
-    width: auto;
+    width: 100%;
     padding-bottom: 30px;
     border-bottom:1px solid #323f4a;
 }
@@ -160,14 +195,14 @@ body,html{
     display: flex;
     position: relative;
     justify-content: flex-end;
-    width:auto;
+    width:100%;
     height:415px;
     border-radius: 20px;
     overflow-x: auto;
     background-color: #30363bd5;
     box-shadow: inset 20px 0 200px rgb(0, 0, 0); 
-    padding:30px 0px 0px 30px;   
-    background: linear-gradient(to right,rgba(29,35,43,.75) 20%, #30363bd5 50%,rgba(29,35,43,.75) 80%);
+    padding:30px 0px 0px 0px;   
+    background: linear-gradient(to right,rgba(29,35,43,.75) 20%, #171819d5 50%,rgba(29,35,43,.75) 100%);
 }
 .daily-targets-shadowed {
     position: absolute;
@@ -176,7 +211,7 @@ body,html{
     top: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to right,rgb(0, 0, 0),transparent 15%);
+    background: linear-gradient(to right,rgb(0, 0, 0),transparent 25%);
     pointer-events: none;
 }
 .single-targets{
@@ -184,6 +219,7 @@ body,html{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 240px;
     min-width: 240px;
     height: auto;
 }
@@ -203,7 +239,7 @@ body,html{
     transition: background-color .2s ease;
 }
 .target-question{
-    height: 30vh;
+    height: 80%;
     margin-top: 30px;
     padding: 5px;
     display: block;
@@ -211,6 +247,9 @@ body,html{
     padding:20px 20px 10px;
     border:2px solid #4c617352;
     transition: .2s ease;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
 }
 .target-question:hover{
     transform: scale(1.05) translateY(-5px);
@@ -238,14 +277,15 @@ body,html{
     justify-content: flex-start;
     width: auto;
     overflow-x: scroll;
-    max-width: 800px;
+    width: 100%;
     gap: 40px;
     position: relative;
     padding-bottom: 50px;
 }
 .targets-scroll::-webkit-scrollbar, 
 .codespace::-webkit-scrollbar{
-    width: 10px; /* 滚动条宽度 */
+    width: 10px;
+    height: 10px; /* 滚动条宽度 */
   }
   
 .targets-scroll::-webkit-scrollbar-thumb,
@@ -266,14 +306,184 @@ border-radius: 2px; /* 边框半径 */
 }
 .battle-card{
     width: auto;
-    height: 200px;
-    box-shadow: 0 0 30px rgba(24,29,35,0),0px 20px 50px rgba(0,0,0,.2),inset 1px 1px 3px hsla(0,0%,100%,.1);
-    background: linear-gradient(94.5deg,rgba(29,35,43,.75) 0.19%,rgba(24,29,35,.563));
+    height: auto;
+    max-width: 800px;
+    max-height: 260px;
+    box-shadow: 0 0 30px rgba(24,29,35,0),0px 20px 30px rgba(0,0,0,.2),inset 1px 1px 3px hsla(0,0%,100%,.1);
+    background: linear-gradient(94.5deg,rgba(29,35,43,.75) 0.2%,rgba(24,29,35,.563));
     border-radius: 20px;
     padding: 30px;
+    display: flex;
+}
+.lastbattle,
+.lastbattle-q{
+    flex:1;
+}
+.lastbattle{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.lastbattleintro{
+    width: 80%;
+    
+}
+.lastbattle h3{
+    font-weight: 1000;
+    letter-spacing: 0px;
+    color: #fff;
+    font-family: gilroy;
+    font-size: 22px;
+    padding-bottom: 25px;
+}
+.lastbattle p{
+    font-weight: 700;
+    color: #919ca5;
+    font-family: gilroy;
+    font-size: 14px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #4c61733f;
+}
+.lastbattlestart{
+    width: 100%;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+}
+.lastbattlestart .button{
+    width: 70%;
+    height: 60%;
+    max-height:50px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin-right: 15px;
+}
+.lastbattle-q{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.lastbattle-q img{
+    width: 100%;
+    border-radius: 10px;
+}
+.battleimage{
+    position: relative;
+    width:40%;
+    margin: 0 10px;
+}
+.battleimage:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    transition: .3s ease;
+}
+.battleimagetag{
+    position: absolute;
+    width: 40px;
+    height:20px;
+    color: #fff;
+    font-family: gilroy;
+    font-weight: 600;
+    text-align: center;
+    background: #000000ad;
+    font-size: 10px;
+    border-radius: 5px;
+    margin: 5px 0 0 4px;
+}
+/*此下写dailytargets界面样式*/
+.dailypageheader{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.dailypageheader p,
+.dailypageheader h1{
+    text-align: center;
+    padding-top: 30px;
+    line-height: 1.4;
+    font-family: gilroy;
+}
+.dailypageheader h1{
+    color: #fff;
+    font-size: 28px;
+}
+.dailypageheader p,
+.previousheader p{
+    color: #9ab3c8;
+    letter-spacing: -.3px;
+}
+.dailypageheader p{
+    padding-bottom: 40px;
+}
+.previoustargets{
+    width: 100%;
+    position: inherit;
+}
+.previousheader{
+    margin-top: 80px;
+    width: 100%;
+    background: linear-gradient(to bottom,#000000 0,rgba(27, 27, 27, 0.256) );
+    border-radius: 10px;
+}
+.previousheader p,
+.previousheader h2{
+    font-family: gilroy;
+    padding: 0 0 30px 0;
+    text-align: center;
+}
+.previousheader h2{
+    color: #fff;
+}
+.previoustargetsline{
+    width: 100%;
+    height:auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap:60px;
+}
+.previoustargetsline .single-targets{
+    width: 45%;
+    display: flex;
+}
+.previoustargetsline .pill{
+    position: absolute;
+    z-index: 1;
+    background: #000000c2;
+    color: #fff;
+    align-self: flex-end;
+    transform: translateX(-40px) translateY(-100px);
+
+}
+/*以下写battlepage样式*/
+.battlebtns{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.battlebtns .button{
+    margin:0 10px;
+}
+.pastbattle{
+    margin-top: 20px;
+}
+.pastbattle h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #fff;
+    margin:20px 0;
+}
+.pastbattle .battle-card{
+    margin: 10px 0;
 }
 
-
+/*此下写代码界面样式*/
 .playapp{
     display: flex;
     flex-direction: column;
@@ -319,10 +529,13 @@ border-radius: 2px; /* 边框半径 */
     background: #000000;
     color:#ffffffd1;  
     height: 70vh; 
+    width: 100%;
 }
 .cm-line{
-    width: 100%;
+    min-width: 100%;
     white-space: break-spaces;
+    font-family: gilroy;
+    font-size: 14px;
 }
 .cm-content{
     max-width: calc(100% - 35px);
@@ -349,6 +562,8 @@ border-radius: 2px; /* 边框半径 */
 .outputchart{
     width: 400px;
     height: 300px;
-    background: #000000;
-    padding-top: 40px;
+    background: #360d0daa;
+    margin-top: 20px;
+    overflow: hidden;
 }
+

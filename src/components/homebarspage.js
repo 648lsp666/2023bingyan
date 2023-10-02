@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Header';
 import Leftbar from './Leftbar';
 import Homepage from './homepage';
+import Dailypage from './dailytargetpage';
 
   function Homebarpages(props) {
     return (

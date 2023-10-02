@@ -1,17 +1,8 @@
 import React from "react";
-import Challenge from "./Challenge";
+import Scrolltarget from "./scrolltarget";
+import Battlecard from "./battlecard";
 
 function homepage(props){
-    const dailyChallenges = [
-        <Challenge id = "1" key="1"/>,
-        <Challenge id = "2" key="2"/>,
-        <Challenge id = "3" key="3"/>,
-        <Challenge id = "4" key="4"/>,
-        <Challenge id = "4" key="4"/>,
-        <Challenge id = "4" key="4"/>,
-        <Challenge id = "4" key="4"/>,   
-    ];
-
 
     return(
         <div className="homepage">
@@ -33,13 +24,7 @@ A new target everyday for you to unwind. No leaderboards, no competition.</p>
                     </div>
                     <button className="button">View all daily targets</button>
                 </div>
-                <div className="targets-card">
-                    <div className="targets-scroll">
-                            {dailyChallenges}
-                        <div className="targets today"></div>
-                    </div>
-                    <div className="daily-targets-shadowed"></div>
-                </div>
+                <Scrolltarget></Scrolltarget>
             </div>
             <div className="battles">
                 <div className="battles-intro">
@@ -49,14 +34,10 @@ A new target everyday for you to unwind. No leaderboards, no competition.</p>
                         <p>Compete with players around the world in this nail-biting CSS Battle
 </p>
                     </div>
-                    
                     <button className="button">View all battles</button>
                         <button className="button">Host a private battle</button>
                 </div>
-                <div className="battle-card">
-                    <div className="lastbattle"></div>
-                    <div className="lastbattle-q"></div>
-                </div>
+                <Battlecard></Battlecard>
             </div>
         </div>
 

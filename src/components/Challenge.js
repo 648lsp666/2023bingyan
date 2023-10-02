@@ -1,12 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
-function Challenge() {
-
+function Challenge({id}) {
   return (
     <div className="single-targets">
     <div className="pill"></div>
-        <div className="target-question">
+                <a href = {`/play/${id}`} className='target-question'>
                 <img src="https://cssbattle.dev/images/welcome.jpg" ></img>
                 <div className="target-footer">
                 <div className="score">
@@ -15,8 +15,7 @@ function Challenge() {
                 </div>
                 <button class='button' >?</button>
                 </div>
-            
-    </div>            
+                </a>
 </div>
   );
 }
