@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
 
-function MainContent() {
+function Maincontent() {
   return (
     <div className="main-content">
       <Outlet />
@@ -8,4 +8,4 @@ function MainContent() {
   );
 }
 
-export default MainContent;
+export default Maincontent;

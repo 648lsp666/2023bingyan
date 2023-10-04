@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './Header';
 import Leftbar from './Leftbar';
 import Homepage from './homepage';
+import Dailypage from './dailytargetpage';
+import Footer from './footer';
 
   function Homebarpages(props) {
     return (
@@ -16,8 +18,9 @@ import Homepage from './homepage';
           <Routes>
             <Route path='/' element={<Homepage/>} />
           </Routes>
-          
+          <Footer></Footer>
           </div>
+          
         </div>
     
     );

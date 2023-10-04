@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function Leftbar(props){
+function Leftbar2(props){
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     useEffect(() => {
         function handleResize() {
@@ -9,16 +9,82 @@ function Leftbar(props){
         }
 
         window.addEventListener('resize', handleResize);
-        // æ¸…é™¤äº‹ä»¶ç›‘å¬ä»¥é¿å…å†…å­˜æ³„æ¼
+        // Çå³ýÊÂ¼þ¼àÌýÒÔ±ÜÃâÄÚ´æÐ¹Â©
         return () => {
           window.removeEventListener('resize', handleResize);
         };
       }, []);    
+      
 
-      function HoverDivs() {
+    const largestwidth = 1400;
+    document.querySelector('.left-content')
+      //°ó¶¨°´Å¥ÊÂ¼þ£»
+      const [sign,setsign] = useState(true);
+      var style1 = {};
+      var logostyle1 = {};
+      var style2 = {};
+      var logostyle2 = {};
+      function showlist(){
+        const list1 = document.querySelector('.left-barcontent');
+        const list2 = document.querySelector('.left-barcontent2');
+        const logo = document.querySelector('.left-bartop');
+        if(sign == true){
+            style1 = {
+                transform: 'translateX(0)',
+                transition: '.3s ease',
+            }
+            logostyle1 = {
+                transform: 'translateX(0px)',
+                transition: '.3s ease',
+            }            
+            style2 = {
+                transform: 'translateX(0)',
+                transition: '.3s ease',
+            }
+            logostyle2 = {
+                transition: '.3s ease',
+                transform: 'translateX(0)',
+            }
+            setsign(false);
+        }
+        else{
+            style2 = {
+                transform: 'translateX(-80px)',
+                transition: '.3s ease',
+            }
+            logostyle2 = {
+                transform: 'translateX(80px)',
+                transition: '.3s ease',
+            }
+            style1 = {
+                transform: 'translateX(-200px)',
+                transition: '.3s ease',
+            }
+            logostyle1 = {
+                transform: 'translateX(200px)',
+                transition: '.3s ease',
+            }
+            setsign(true);
+        }
+        if(list1){
+            logo.style.transform = logostyle1.transform;
+            list1.style.transition = style1.transition;
+            list1.style.transform = style1.transform;
+            logo.style.transition = logostyle1.transition;
+            list1.style.boxshadow = style1.boxshadow;
+        }
+        else if(list2){
+            logo.style.transform = logostyle2.transform;
+            list2.style.transform = style2.transform;
+            list2.style.transition = style2.transition;
+            logo.style.transition = logostyle2.transition;
+        }
+      };
+    //Â·ÓÉÀ¸Êó±êÐü¸¡²é¿´ÄÚÈÝÊÂ¼þ
+    function HoverDivs() {
         const [hoveredDiv, setHoveredDiv] = useState(null);
       
-        // å¤„ç†é¼ æ ‡è¿›å…¥æŸä¸ªdivçš„äº‹ä»¶
+        // ´¦ÀíÊó±ê½øÈëÄ³¸ödivµÄÊÂ¼þ
         const handleMouseEnter = (divNumber) => {
           setHoveredDiv(divNumber);
         };
@@ -114,15 +180,16 @@ function Leftbar(props){
             </div>
             </div>
         );
-    };  
-
-    const largestwidth = 1400;
-
+    };
+      
+  
 
     const formalleftbar = (       
     <div className="left-barcontent">
     <div className="left-bartop">
-        <span className="left-bartoplogo" ></span>
+     <button class='button' id="showlist" onClick={showlist}>
+            <svg width="25" height="25" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 42C11.2091 42 13 40.2091 13 38C13 35.7909 11.2091 34 9 34C6.79086 34 5 35.7909 5 38C5 40.2091 6.79086 42 9 42Z" stroke="#9b9b9b" stroke-width="4" stroke-linejoin="round"/><path d="M9 14C11.2091 14 13 12.2092 13 10C13 7.79086 11.2091 6 9 6C6.79086 6 5 7.79086 5 10C5 12.2092 6.79086 14 9 14Z" stroke="#9b9b9b" stroke-width="4" stroke-linejoin="round"/><path d="M9 28C11.2091 28 13 26.2092 13 24C13 21.7908 11.2091 20 9 20C6.79086 20 5 21.7908 5 24C5 26.2092 6.79086 28 9 28Z" stroke="#9b9b9b" stroke-width="4" stroke-linejoin="round"/><path d="M21 24H43" stroke="#9b9b9b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 38H43" stroke="#9b9b9b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 10H43" stroke="#9b9b9b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button><span className="left-bartoplogo" ></span>
     </div>
     <div className="leftbarbuttons">
         <div className=" ">
@@ -157,7 +224,9 @@ function Leftbar(props){
 
 const afterleftbar = (<div className="left-barcontent2">
 <div className="left-bartop">
-    <span className="left-bartoplogo" ></span>
+    <button class='button' id='showlist' onClick={showlist}>
+            <svg width="25" height="25" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 42C11.2091 42 13 40.2091 13 38C13 35.7909 11.2091 34 9 34C6.79086 34 5 35.7909 5 38C5 40.2091 6.79086 42 9 42Z" stroke="#9b9b9b" stroke-width="4" stroke-linejoin="round"/><path d="M9 14C11.2091 14 13 12.2092 13 10C13 7.79086 11.2091 6 9 6C6.79086 6 5 7.79086 5 10C5 12.2092 6.79086 14 9 14Z" stroke="#9b9b9b" stroke-width="4" stroke-linejoin="round"/><path d="M9 28C11.2091 28 13 26.2092 13 24C13 21.7908 11.2091 20 9 20C6.79086 20 5 21.7908 5 24C5 26.2092 6.79086 28 9 28Z" stroke="#9b9b9b" stroke-width="4" stroke-linejoin="round"/><path d="M21 24H43" stroke="#9b9b9b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 38H43" stroke="#9b9b9b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 10H43" stroke="#9b9b9b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button><span className="left-bartoplogo" ></span>
 </div>
 <div className="leftbarbuttons">
         <HoverDivs></HoverDivs>
@@ -173,4 +242,4 @@ const afterleftbar = (<div className="left-barcontent2">
     );
 }
 
-export default Leftbar;
+export default Leftbar2;
