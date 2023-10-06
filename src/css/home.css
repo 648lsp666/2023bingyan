@@ -9,6 +9,13 @@ body,html{
     background: #07080b;
     font-family: IBM Plex Mono,Menlo,DejaVu Sans Mono,Lucida Console,monospace;
     -webkit-font-smoothing: antialiased;
+    width: 100%;
+}
+a{
+    border-radius: inherit;
+    color: inherit;
+    position: inherit;
+    text-decoration: none;
 }
 .app{
     width: 100%;
@@ -58,6 +65,22 @@ body,html{
     color: #ffffffcc;
     font-weight: 500;
 }
+.labelfor{
+    position: absolute;
+    left: 100%;
+    width: auto;
+    padding: 0 10px;
+    height: 40px;
+    display: flex;
+    white-space: nowrap;
+    background: linear-gradient(linear-gradient(95deg,rgba(45,55,64,0.5) 0,rgba(39,45,42,.5) 100%));
+    box-shadow: inset 1px 1px 3px rgba(255,255,255,.1);
+    border-radius: 10px;
+    opacity: 1;
+    transition: .125s ease;
+    justify-content: center;
+    align-items: center;
+}
 
 .content{
     position: relative;
@@ -66,6 +89,7 @@ body,html{
     width: 100%;
     flex-direction: column;
     align-items: center;
+    min-width: 1000px;
 }
 .header,.left-bartoplogo{
     display: flex;
@@ -85,6 +109,8 @@ body,html{
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    position: sticky;
+    right: 0;
 }
 .header>.header-left{
     width: auto;
@@ -92,6 +118,20 @@ body,html{
 .header #day-night{
     border-radius: 100%;
     padding: 7px;
+}
+.footer{
+    min-height: 40px;
+    background: rgba(24,29,35,.75);
+    border-top: 1px solid #20262e;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1.25rem;
+    align-self: flex-end;
+    bottom:0;
+    width: 100%;
 }
 .left-bartoplogo{
     background-repeat: no-repeat;
@@ -147,6 +187,7 @@ body,html{
     font-weight: 600;
     letter-spacing: 0.2px;
     text-align: left;
+    white-space: nowrap;
 }
 .button:hover{
     background-color: #4c6173;
@@ -161,6 +202,13 @@ body,html{
     overflow-y: auto;
     padding: 48px;
     max-width: 1050px;
+    width: 100%;
+}
+.label{
+    padding: 10px;
+    border-radius: 100%;
+    background-color: #242834;
+    margin:0 0 14px 14px;
 }
 .homeintro{
     display: flex;
@@ -224,11 +272,42 @@ body,html{
     min-width: 240px;
     height: auto;
 }
+.lock{
+    position: absolute;
+    width: 140px;
+    height: 116px;
+    overflow: hidden;
+    border: none;
+    transform: translateX(-20px);
+    opacity: .8;
+}
+.tomorrowlock p{
+    text-align: center;
+    color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+.counttime{
+    display: flex;
+    flex-wrap: 1;
+    height:auto;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+    align-items: center;
+}
+.count{
+    width: auto;
+    height: auto;
+    padding: 5px;
+}
 .pill{
     position: relative;
     font-size: .875rem;
     display: flex;
-    width: 60px;
+    width: auto;
+    padding:5px 10px;
     align-items: center;
     justify-content: center;
     height: 20px;
@@ -241,7 +320,7 @@ body,html{
 }
 .target-question{
     height: 80%;
-    margin-top: 30px;
+    margin-top: 15px;
     padding: 5px;
     display: block;
     border-radius: 20px;
@@ -271,8 +350,12 @@ body,html{
     width: auto;
     justify-content: space-between;
     align-items: center;
+    margin-top: 15px;
 }
-
+.target-footer button{
+    margin: 15px 5px 0 0;
+    padding: 10px;
+}
 .targets-scroll{
     display: flex;
     justify-content: flex-start;
@@ -346,12 +429,14 @@ border-radius: 2px; /* 边框半径 */
     padding-bottom: 30px;
     border-bottom: 1px solid #4c61733f;
 }
-.lastbattlestart{
+.lastbattlestart,
+.lastbattlestart a{
     width: 100%;
     display: flex;
     flex-grow: 1;
     justify-content: center;
     align-items: center;
+    text-decoration: none;
 }
 .lastbattlestart .button{
     width: 70%;
@@ -359,7 +444,8 @@ border-radius: 2px; /* 边框半径 */
     max-height:50px;
     font-size: 16px;
     letter-spacing: 1px;
-    margin-right: 15px;
+    margin: 0 30px 0 0;
+    background-color: #0060ca;
 }
 .lastbattle-q{
     display: flex;
@@ -375,6 +461,9 @@ border-radius: 2px; /* 边框半径 */
     position: relative;
     width:40%;
     margin: 0 10px;
+}
+.singlebattle-test .battleimage{
+    width: 100%;
 }
 .battleimage:hover{
     transform: scale(1.05);
@@ -393,6 +482,8 @@ border-radius: 2px; /* 边框半径 */
     font-size: 10px;
     border-radius: 5px;
     margin: 5px 0 0 4px;
+    align-self: flex-start;
+    justify-self: flex-start;
 }
 /*此下写dailytargets界面样式*/
 .dailypageheader{
@@ -483,7 +574,138 @@ border-radius: 2px; /* 边框半径 */
 .pastbattle .battle-card{
     margin: 10px 0;
 }
-
+/*下写singlebattle*/
+.singlebattle{
+    display: flex;
+    justify-content: left;
+    flex-direction: column;
+    gap:20px;
+}
+.singlebattlecontent{
+    width: 100%;
+    display: flex;
+    gap:60px;
+    margin-top: 50px;
+}
+.singlebattle-test a{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    padding: 8px;
+    border-radius: 20px;
+    border: 2px solid #20262e;
+    background: #101217;
+    text-decoration: none;
+    color:#4c6173;
+    width: 100%
+}
+.singlebattle-test a .battleimagetag{
+    opacity: 0;
+    transition: .3s ease;
+}
+.singlebattle-test a:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 200px #000;
+    transition: .3s all ease;
+    cursor: pointer;
+    .battleimagetag{
+        opacity: 1;
+    }
+}
+.showtest{
+    border-radius: inherit;  
+    width: 100%; 
+    display: flex;
+    min-width: 200px;
+    max-width: 400px;
+}
+.aboutyou{
+    width: 100%;
+    border: 2px solid #444b5f;
+    border-radius: inherit;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2d363f88;
+}
+.battleleaderboard{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-grow: 1;
+}
+/*下写leaderboard*/
+.leaderboardbtns{
+    width: 50%;
+    font-size: 16px;
+    border: 0;
+    background: linear-gradient(95.41deg,rgba(45,55,64,0.5) 0,rgba(39,45,52,0.5) 101.76%);
+    box-shadow: 0px 8px 20px rgba(0,0,0,.1),0px 24px 50px rgba(0,0,0,.15),inset 1px 1px 3px hsla(0,0%,100%,.1);
+    border-radius: 16px;
+    padding: 15px;
+    display: flex;
+    gap:20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+.leaderboardbtn{
+    height:40px;
+    width: 80px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,.1),0px 24px 50px rgba(0,0,0,.15),inset 1px 1px 3px hsla(0,0%,100%,.1);
+    background: linear-gradient(95.41deg,rgba(91, 97, 101, 0.5) 0,rgba(38, 46, 54, 0.5) 101.76%);
+    border-radius: inherit;
+    color: #FFF;
+    letter-spacing: .5px;
+}
+.leaderboardbtn:hover{
+    cursor: pointer;
+}
+.leaderboardcontent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap:10px;
+}
+.playersintro{
+    display: flex;
+    width: 80%;
+    padding: 20px;
+    align-items: center;
+    justify-content:space-between;
+}
+.playerscore{
+    transform: translateX(16px);
+}
+.singleplayer{
+    display: flex;
+    justify-content:space-between;
+    width: 80%;
+    align-items: center;
+    border: 2px solid #242834;
+    border-radius: 40px;
+    padding:18px;
+}
+.playersprofile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+}
+.playersprofile p{
+    padding: 0;
+}
+.rank svg{
+    transform: translateY(2px);
+}
 /*此下写代码界面样式*/
 .playapp{
     display: flex;
@@ -523,6 +745,17 @@ border-radius: 2px; /* 边框半径 */
     color: #ffffffa6;
     font-weight: 600;
     padding: 6px 18px;
+}
+.codespacecheckdiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+}
+.codespacecheckdiv label{
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: -.5px;
 }
 .codespace{
     position: relative;
@@ -564,7 +797,6 @@ border-radius: 2px; /* 边框半径 */
     height: 300px;
     background: #360d0daa;
     margin-top: 20px;
-    overflow: hidden;
     position: relative;
 }
 .output img{
@@ -585,14 +817,18 @@ iframe{
     -ms-overflow-style: none !important;
 }
 .preview{
-    background: rgb(255, 255, 255);
+    background: rgba(248, 0, 0, 0.861);
     color: #fff;
+    text-align: center;
     position: absolute;
     width: 40px;
     height: 30px;
     top: 100%;
     left: 400px;
     z-index: 10;
+    border-radius: 5px;
+    padding-top: 8px;
+    opacity: 0;
 }
 .statsheader{
     margin-top: 30px;
@@ -628,7 +864,6 @@ iframe{
 }
 .stats p{
     color: #ffffff9b;
-    margin-bottom: 10px;
 }
 .stats label{
     position: absolute;
@@ -654,11 +889,11 @@ iframe{
     flex:1;
     height: 72px;
     display: flex;
-    justify-content: center;
     align-items: center;
     border: 3px solid #2d363f;
     border-radius: 40px;
     margin:30px 0 0 0;
+    padding: 0 0 0 10px;
 }
 .globalstats label{
     width: 40px;
@@ -685,15 +920,117 @@ iframe{
     padding: 7px;
     margin: 15px 0 0 17px;
 }
-.playapp .left-bartop{
+.playapp .left-barcontent2 .left-bartop{
     transform: translateX(70px);
+}
+.playapp .left-barcontent .left-bartop{
+    transform: translateX(200px);
 }
 .playapp .left-bartoplogo{
     transform: translateX(50px);
 }
 
-.playapp .left-barcontent,
+.playapp .left-barcontent{
+    transform: translateX(-200px);
+    transition: .3s ease;
+}
 .playapp .left-barcontent2{
     transform: translateX(-80px);
     transition: .3s ease;
+}
+.submitthescore{
+    background: rgba(0,0,0,.6);
+    backdrop-filter: blur(3px);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s all ease;
+    visibility: hidden;
+    opacity: 0;
+    overflow: hidden;
+}
+.scorecard{
+    padding:30px;
+    text-align: center;
+    background: #13181c;
+    height: auto;
+    width: auto;
+    transform: translateY(-40px);
+}
+.scorecard h2{
+    color: #fff;
+    padding:0 0 20px 0;
+    font-size: 28px;
+}
+.scorecard svg{
+    margin: 20px 0 50px;
+}
+.scorecard p{
+    color: #798b9e;
+    font-size: 16px;
+    white-space: nowrap;
+    letter-spacing: -.7px;
+    padding: 20px 0;
+}
+.scorecard button{
+    margin: 20px;
+    height:40px;
+    width: 35%;
+}
+/*以下写登录界面样式*/
+.logincard{
+    margin-top: 40px;
+    position: relative;
+    background: linear-gradient(94.5deg,rgba(29,35,43,.75) 0.19%,rgba(24,29,35,.563));
+    box-shadow: 0 0 30px rgba(255,223,0,0),0px 20px 50px rgba(0,0,0,.2),inset 1px 1px 3px hsla(0,0%,100%,.1);
+    border-radius: 1rem;
+    backdrop-filter: blur(20px);
+    overflow: hidden;
+    width: auto;
+    height: auto;
+    padding:30px;
+}
+.inputcontainer{
+    display: flex;
+    min-width: 600px;
+}
+.inputcontainer .button{
+    border-radius: 0 50px 50px 0;
+    margin: 0;
+    white-space: nowrap;
+}
+.logincard p{
+    color: #9ab3c8;
+    letter-spacing: -.3px;
+    padding-top: 10px;
+    font-family: gilroy;
+    font-size: 14px;
+}
+.logincard input{
+    width: 100%;
+    padding:15px;
+    border-radius: 50px 0 0 50px;
+}
+.loginbackground{
+    overflow: hidden;
+    width: 120%;
+    margin-bottom: 100px;
+    height: 260px;
+}
+
+/*以下写用户*/
+.useravatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    box-shadow: 2px 2px 5px #0f1117;
 }

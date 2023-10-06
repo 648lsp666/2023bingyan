@@ -5,6 +5,7 @@ import Header from './Header';
 import Leftbar from './Leftbar';
 import Homepage from './homepage';
 import Dailypage from './dailytargetpage';
+import Footer from './footer';
 
   function Homebarpages(props) {
     return (
@@ -17,8 +18,9 @@ import Dailypage from './dailytargetpage';
           <Routes>
             <Route path='/' element={<Homepage/>} />
           </Routes>
-          
+          <Footer></Footer>
           </div>
+          
         </div>
     
     );

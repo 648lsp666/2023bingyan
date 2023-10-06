@@ -3,11 +3,14 @@ import Header from "./Header";
 import Leftbar from "./Leftbar";
 import Scrolltarget from "./scrolltarget";
 import Challenge from "./Challenge";
-
+import Footer from "./footer";
 function Dailypage(){
     const previous = [
-        <Challenge id=''></Challenge>,
-        <Challenge id=''></Challenge>,
+        <Challenge id='1'></Challenge>,
+        <Challenge id='2'></Challenge>,
+        <Challenge id='3'></Challenge>,
+        <Challenge id='4'></Challenge>,
+        <Challenge id='5'></Challenge>,
     ]
     return (
         <div className='app'>
@@ -32,6 +35,7 @@ function Dailypage(){
                     </div>
                 </div>
             </div>
+            <Footer></Footer>
           </div>
         </div>
     )

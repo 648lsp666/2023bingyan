@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Header";
 import Leftbar from "./Leftbar";
 import Battlecard from "./battlecard";
-
+import Footer from "./footer";
 function Battlepage(){
       
     return(
@@ -24,15 +24,16 @@ function Battlepage(){
                     </div>
                     <div className="pastbattle">
                         <h2>Play latest battle</h2>
-                        <Battlecard></Battlecard>
+                        <Battlecard id='1'></Battlecard>
                     </div>
                     <div className="pastbattle">
                         <h2>Play past battles</h2>
-                        <Battlecard></Battlecard>
-                        <Battlecard></Battlecard>
-                        <Battlecard></Battlecard>
+                        <Battlecard id='2'></Battlecard>
+                        <Battlecard id='3'></Battlecard>
+                        <Battlecard id='4'></Battlecard>
                     </div>
                 </div>
+                <Footer></Footer>
             </div>
         </div>
 

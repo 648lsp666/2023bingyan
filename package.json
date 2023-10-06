@@ -3,14 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@codemirror/commands": "^6.3.0",
+    "@codemirror/lang-html": "^6.4.6",
+    "@codemirror/lang-markdown": "^6.2.1",
+    "@codemirror/language-data": "^6.3.1",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.5.1",
+    "codemirror": "^6.0.1",
+    "lezer-generator": "^0.13.4",
+    "lezer-html": "^0.13.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-markdown": "^9.0.0",
+    "react-quill": "^2.0.0",
     "react-router-dom": "^6.16.0",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
@@ -38,5 +48,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.1",
+    "@types/codemirror": "^5.60.10",
+    "@types/react-codemirror": "^1.0.9"
   }
 }

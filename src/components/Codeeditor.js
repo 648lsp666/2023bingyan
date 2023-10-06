@@ -48,7 +48,7 @@ function CodeEditor() {
       setCode(defaultText);
 
     }
-  }, [setCode]);
+  }, []);
 
   return (
     <div className='play-content code'>
